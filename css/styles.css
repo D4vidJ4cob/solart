@@ -1,0 +1,206 @@
+/* ============================================
+   SolArt — Custom Styles
+   Charcoal / Bronze / White Palette
+   ============================================ */
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Gallery overlay gradient */
+.gallery-overlay {
+    background: linear-gradient(to top, rgba(18,18,18,0.8) 0%, rgba(18,18,18,0) 100%);
+}
+
+/* ============================================
+   Scroll-triggered reveal animations
+   ============================================ */
+
+[data-animate] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-animate="left"] {
+    transform: translateX(-30px) translateY(0);
+}
+
+[data-animate="right"] {
+    transform: translateX(30px) translateY(0);
+}
+
+[data-animate="scale"] {
+    transform: scale(0.95);
+}
+
+[data-animate].is-visible {
+    opacity: 1;
+    transform: translateY(0) translateX(0) scale(1);
+}
+
+/* Stagger delays for children */
+[data-animate-delay="100"] { transition-delay: 0.1s; }
+[data-animate-delay="200"] { transition-delay: 0.2s; }
+[data-animate-delay="300"] { transition-delay: 0.3s; }
+[data-animate-delay="400"] { transition-delay: 0.4s; }
+[data-animate-delay="500"] { transition-delay: 0.5s; }
+
+/* ============================================
+   Mobile Menu
+   ============================================ */
+
+.mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.3s ease;
+    opacity: 0;
+}
+
+.mobile-menu.is-open {
+    max-height: 500px;
+    opacity: 1;
+}
+
+/* Hamburger icon animation */
+.hamburger-line {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger.is-active .hamburger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.is-active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.is-active .hamburger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ============================================
+   Diensten dropdown
+   ============================================ */
+
+.diensten-menu {
+    transform: translateY(-4px);
+    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+}
+
+.group:hover .diensten-menu {
+    transform: translateY(0);
+}
+
+/* Mobile submenu */
+.mobile-submenu {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.25s ease;
+}
+
+.mobile-submenu.is-open {
+    max-height: 200px;
+    opacity: 1;
+}
+
+/* ============================================
+   Navbar scroll state
+   ============================================ */
+
+.nav-scrolled {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 1px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* ============================================
+   Form success state
+   ============================================ */
+
+.form-success {
+    animation: successPulse 0.5s ease;
+}
+
+@keyframes successPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+/* ============================================
+   Button hover ripple
+   ============================================ */
+
+.btn-ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-ripple::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.3s ease;
+}
+
+.btn-ripple:active::after {
+    transform: scale(2);
+    opacity: 1;
+    transition: transform 0s, opacity 0s;
+}
+
+/* ============================================
+   Custom scrollbar
+   ============================================ */
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #E5E5E5;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #A67C52;
+}
+
+/* ============================================
+   Toast notification
+   ============================================ */
+
+.toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: #121212;
+    border: 1px solid rgba(166, 124, 82, 0.3);
+    color: #FFFFFF;
+    padding: 1rem 1.5rem;
+    font-size: 0.85rem;
+    z-index: 9999;
+    transform: translateY(120%);
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.3s ease;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+    max-width: 360px;
+}
+
+.toast.is-visible {
+    transform: translateY(0);
+    opacity: 1;
+}
