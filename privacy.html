@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html class="light" lang="nl">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Privacybeleid | SolArt</title>
+    <meta name="description"
+        content="Lees het privacybeleid van SolArt. Wij respecteren uw privacy en verwerken uw persoonsgegevens conform de GDPR-wetgeving." />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://www.solart.be/privacy.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:type"        content="website" />
+    <meta property="og:url"         content="https://www.solart.be/privacy.html" />
+    <meta property="og:site_name"   content="SolArt" />
+    <meta property="og:locale"      content="nl_BE" />
+    <meta property="og:title"       content="Privacybeleid | SolArt" />
+    <meta property="og:description" content="Lees het privacybeleid van SolArt. Wij respecteren uw privacy en verwerken uw persoonsgegevens conform de GDPR-wetgeving." />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@300;400;500&family=Manrope:wght@500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <!-- Compiled CSS (Tailwind + custom styles) -->
+    <link rel="stylesheet" href="css/output.css" />
+</head>
+
+<body class="font-body selection:bg-bronze selection:text-white">
+
+    <!-- ═══════════════════════════════════════════
+         NAVIGATION
+         ═══════════════════════════════════════════ -->
+    <nav id="main-nav" class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-border-gray">
+        <div class="flex justify-between items-center px-8 lg:px-12 py-5 max-w-[1600px] mx-auto">
+            <!-- Logo -->
+            <a href="index.html" class="text-2xl font-extrabold tracking-[0.2em] text-charcoal font-headline uppercase">
+                SolArt
+            </a>
+
+            <!-- Desktop nav links -->
+            <div class="hidden lg:flex items-center space-x-12">
+                <a class="nav-link font-label text-[11px] font-bold tracking-[0.2em] text-charcoal/50 hover:text-bronze transition-colors duration-300 uppercase"
+                    href="index.html">Home</a>
+                <div class="relative group" id="diensten-dropdown">
+                    <button
+                        class="nav-link font-label text-[11px] font-bold tracking-[0.2em] text-charcoal/50 hover:text-bronze transition-colors duration-300 uppercase flex items-center gap-1">
+                        Diensten
+                        <span class="material-symbols-outlined text-xs transition-transform group-hover:rotate-180">expand_more</span>
+                    </button>
+                    <div
+                        class="diensten-menu absolute top-full left-0 mt-2 w-72 bg-white border border-border-gray shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <a class="block px-6 py-3 text-[11px] font-label font-bold tracking-[0.15em] text-charcoal/50 hover:text-bronze hover:bg-soft-gray transition-all uppercase"
+                            href="laadpalen-zonnepanelen.html">Laadpalen, Zonnepanelen & Batterijen</a>
+                        <a class="block px-6 py-3 text-[11px] font-label font-bold tracking-[0.15em] text-charcoal/50 hover:text-bronze hover:bg-soft-gray transition-all uppercase"
+                            href="elektriciteitswerken.html">Elektriciteitswerken</a>
+                    </div>
+                </div>
+                <a class="nav-link font-label text-[11px] font-bold tracking-[0.2em] text-charcoal/50 hover:text-bronze transition-colors duration-300 uppercase"
+                    href="index.html#projecten">Projecten</a>
+                <a class="nav-link font-label text-[11px] font-bold tracking-[0.2em] text-charcoal/50 hover:text-bronze transition-colors duration-300 uppercase"
+                    href="index.html#contact">Contact</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="index.html#contact"
+                    class="hidden sm:block bg-charcoal text-white px-8 py-3 font-label text-[11px] font-bold tracking-[0.2em] uppercase transition-all duration-300 hover:bg-bronze">
+                    Offerte Aanvragen
+                </a>
+                <button id="hamburger-btn"
+                    class="hamburger lg:hidden flex flex-col justify-center items-center gap-[6px] w-10 h-10"
+                    aria-label="Menu openen">
+                    <span class="hamburger-line block w-6 h-[2px] bg-charcoal origin-center"></span>
+                    <span class="hamburger-line block w-6 h-[2px] bg-charcoal origin-center"></span>
+                    <span class="hamburger-line block w-6 h-[2px] bg-charcoal origin-center"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="mobile-menu lg:hidden border-t border-border-gray bg-white/95 backdrop-blur-xl">
+            <div class="flex flex-col px-8 py-6 space-y-5">
+                <a class="font-label text-[11px] font-bold tracking-[0.2em] text-charcoal uppercase"
+                    href="index.html">Home</a>
+                <div>
+                    <button id="mobile-diensten-toggle"
+                        class="font-label text-[11px] font-bold tracking-[0.2em] text-charcoal/50 hover:text-bronze transition-all flex items-center gap-1 w-full uppercase">
+                        Diensten
+                        <span class="material-symbols-outlined text-xs transition-transform" id="mobile-diensten-arrow">expand_more</span>
+                    </button>
+                    <div id="mobile-diensten-sub" class="mobile-submenu pl-4 mt-3 space-y-3 border-l border-bronze/30">
+                        <a class="block font-label text-[11px] font-bold tracking-[0.2em] text-charcoal/50 hover:text-bronze transition-all uppercase"
+                            href="laadpalen-zonnepanelen.html">Laadpalen, Zonnepanelen & Batterijen</a>
+                        <a class="block font-label text-[11px] font-bold tracking-[0.2em] text-charcoal/50 hover:text-bronze transition-all uppercase"
+                            href="elektriciteitswerken.html">Elektriciteitswerken</a>
+                    </div>
+                </div>
+                <a class="font-label text-[11px] font-bold tracking-[0.2em] text-charcoal/50 hover:text-bronze transition-all uppercase"
+                    href="index.html#projecten">Projecten</a>
+                <a class="font-label text-[11px] font-bold tracking-[0.2em] text-charcoal/50 hover:text-bronze transition-all uppercase"
+                    href="index.html#contact">Contact</a>
+                <a href="index.html#contact"
+                    class="sm:hidden w-full bg-charcoal text-white px-6 py-3 font-label text-[11px] font-bold tracking-[0.2em] uppercase hover:bg-bronze transition-all mt-2 text-center">
+                    Offerte Aanvragen
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════
+         MAIN CONTENT
+         ═══════════════════════════════════════════ -->
+    <main>
+
+        <!-- ─── Hero banner ─────────────────────── -->
+        <section class="pt-40 pb-20 px-8 lg:px-12 bg-soft-gray border-b border-border-gray">
+            <div class="max-w-[1600px] mx-auto" data-animate="left">
+                <span class="inline-block font-label text-[11px] font-bold tracking-[0.3em] text-bronze uppercase mb-6">
+                    Juridisch
+                </span>
+                <h1 class="font-headline text-4xl md:text-6xl font-bold text-charcoal tracking-tight uppercase leading-tight mb-6">
+                    Privacybeleid
+                </h1>
+                <p class="text-charcoal/50 font-body text-lg font-light">
+                    Laatste update: 25 maart 2026
+                </p>
+            </div>
+        </section>
+
+        <!-- ─── Privacybeleid tekst ──────────────── -->
+        <section class="py-24 px-8 lg:px-12 bg-white">
+            <div class="max-w-[860px] mx-auto space-y-16 font-body text-charcoal/80 leading-relaxed">
+
+                <!-- 1. Wie zijn wij -->
+                <div data-animate="up">
+                    <h2 class="font-headline text-2xl font-bold text-charcoal uppercase tracking-tight mb-6">
+                        1. Wie zijn wij?
+                    </h2>
+                    <p>
+                        SolArt is een Belgisch bedrijf gespecialiseerd in duurzame energie-oplossingen, waaronder
+                        zonnepanelen, laadpalen, thuisbatterijen en elektriciteitswerken. Wij zijn verantwoordelijk
+                        voor de verwerking van uw persoonsgegevens zoals beschreven in dit privacybeleid.
+                    </p>
+                    <ul class="mt-6 space-y-2 pl-4 border-l-2 border-bronze/30">
+                        <li><span class="font-semibold text-charcoal">Bedrijfsnaam:</span> SolArt</li>
+                        <li><span class="font-semibold text-charcoal">E-mail:</span>
+                            <a href="mailto:info@solart.be" class="text-bronze hover:underline">info&#64;solart.be</a>
+                        </li>
+                        <li><span class="font-semibold text-charcoal">Telefoon:</span>
+                            <a href="tel:+3201145678" class="text-bronze hover:underline">+32 (0) 11 45 67 89</a>
+                        </li>
+                        <li><span class="font-semibold text-charcoal">Land:</span> België</li>
+                    </ul>
+                </div>
+
+                <!-- 2. Welke gegevens verzamelen wij -->
+                <div data-animate="up">
+                    <h2 class="font-headline text-2xl font-bold text-charcoal uppercase tracking-tight mb-6">
+                        2. Welke persoonsgegevens verzamelen wij?
+                    </h2>
+                    <p>Via ons contactformulier verzamelen wij de volgende gegevens:</p>
+                    <ul class="mt-4 space-y-2 list-disc list-inside pl-2">
+                        <li>Uw naam</li>
+                        <li>Uw e-mailadres</li>
+                        <li>Het type project waarvoor u interesse heeft</li>
+                        <li>De inhoud van uw bericht</li>
+                    </ul>
+                    <p class="mt-4">
+                        Wij verzamelen geen gevoelige persoonsgegevens zoals nationaliteit, gezondheidsgegevens of
+                        financiële informatie via dit formulier.
+                    </p>
+                </div>
+
+                <!-- 3. Waarvoor gebruiken wij uw gegevens -->
+                <div data-animate="up">
+                    <h2 class="font-headline text-2xl font-bold text-charcoal uppercase tracking-tight mb-6">
+                        3. Waarvoor gebruiken wij uw gegevens?
+                    </h2>
+                    <p>Uw gegevens worden uitsluitend gebruikt voor:</p>
+                    <ul class="mt-4 space-y-2 list-disc list-inside pl-2">
+                        <li>Het beantwoorden van uw offerte-aanvraag of vraag</li>
+                        <li>Het opvolgen van uw dossier als klant</li>
+                        <li>Het verbeteren van onze dienstverlening</li>
+                    </ul>
+                    <p class="mt-4">
+                        Wij verkopen uw gegevens nooit aan derden en gebruiken ze niet voor reclamedoeleinden
+                        zonder uw uitdrukkelijke toestemming.
+                    </p>
+                </div>
+
+                <!-- 4. Rechtsgrond -->
+                <div data-animate="up">
+                    <h2 class="font-headline text-2xl font-bold text-charcoal uppercase tracking-tight mb-6">
+                        4. Rechtsgrond voor verwerking
+                    </h2>
+                    <p>
+                        Wij verwerken uw persoonsgegevens op basis van uw toestemming (art. 6.1.a GDPR) en/of op
+                        basis van ons gerechtvaardigd belang om uw aanvraag te behandelen (art. 6.1.f GDPR).
+                    </p>
+                </div>
+
+                <!-- 5. Bewaartermijn -->
+                <div data-animate="up">
+                    <h2 class="font-headline text-2xl font-bold text-charcoal uppercase tracking-tight mb-6">
+                        5. Hoe lang bewaren wij uw gegevens?
+                    </h2>
+                    <p>
+                        Uw gegevens worden bewaard zolang als noodzakelijk voor de doeleinden waarvoor ze zijn
+                        verzameld, of zolang de wet dit vereist. Formulierinzendingen worden maximaal
+                        <strong class="text-charcoal">2 jaar</strong> bewaard.
+                    </p>
+                </div>
+
+                <!-- 6. Uw rechten -->
+                <div data-animate="up">
+                    <h2 class="font-headline text-2xl font-bold text-charcoal uppercase tracking-tight mb-6">
+                        6. Uw rechten
+                    </h2>
+                    <p>Conform de GDPR heeft u de volgende rechten:</p>
+                    <ul class="mt-4 space-y-2 list-disc list-inside pl-2">
+                        <li><strong class="text-charcoal">Recht op inzage</strong> — u kunt opvragen welke gegevens wij over u bewaren</li>
+                        <li><strong class="text-charcoal">Recht op rectificatie</strong> — u kunt onjuiste gegevens laten corrigeren</li>
+                        <li><strong class="text-charcoal">Recht op vergetelheid</strong> — u kunt verzoeken dat wij uw gegevens wissen</li>
+                        <li><strong class="text-charcoal">Recht op bezwaar</strong> — u kunt bezwaar maken tegen de verwerking van uw gegevens</li>
+                        <li><strong class="text-charcoal">Recht op overdraagbaarheid</strong> — u kunt uw gegevens in een leesbaar formaat opvragen</li>
+                    </ul>
+                    <p class="mt-4">
+                        Om een verzoek in te dienen, neemt u contact met ons op via
+                        <a href="mailto:info@solart.be" class="text-bronze hover:underline">info&#64;solart.be</a>.
+                        Wij reageren binnen 30 dagen.
+                    </p>
+                </div>
+
+                <!-- 7. Cookies -->
+                <div data-animate="up">
+                    <h2 class="font-headline text-2xl font-bold text-charcoal uppercase tracking-tight mb-6">
+                        7. Cookies
+                    </h2>
+                    <p>
+                        Onze website maakt geen gebruik van tracking- of advertentiecookies. Wij gebruiken
+                        uitsluitend technisch noodzakelijke cookies die de werking van de website garanderen.
+                        Er worden geen gegevens gedeeld met advertentienetwerken.
+                    </p>
+                </div>
+
+                <!-- 8. Derde partijen -->
+                <div data-animate="up">
+                    <h2 class="font-headline text-2xl font-bold text-charcoal uppercase tracking-tight mb-6">
+                        8. Derde partijen
+                    </h2>
+                    <p>
+                        Uw formulierinzendingen worden verwerkt via
+                        <a href="https://www.netlify.com/privacy/" target="_blank" rel="noopener noreferrer"
+                            class="text-bronze hover:underline">Netlify Forms</a>,
+                        een dienst van Netlify Inc. Netlify verwerkt uw gegevens conform hun eigen privacybeleid
+                        en de GDPR. Google Fonts worden geladen vanuit Google's servers — hierbij kan uw
+                        IP-adres tijdelijk worden verwerkt door Google.
+                    </p>
+                </div>
+
+                <!-- 9. Klachten -->
+                <div data-animate="up">
+                    <h2 class="font-headline text-2xl font-bold text-charcoal uppercase tracking-tight mb-6">
+                        9. Klachten
+                    </h2>
+                    <p>
+                        Heeft u een klacht over de manier waarop wij uw gegevens verwerken? U kunt een klacht
+                        indienen bij de Belgische Gegevensbeschermingsautoriteit (GBA):
+                    </p>
+                    <p class="mt-4">
+                        <a href="https://www.gegevensbeschermingsautoriteit.be" target="_blank" rel="noopener noreferrer"
+                            class="text-bronze hover:underline">www.gegevensbeschermingsautoriteit.be</a>
+                    </p>
+                </div>
+
+                <!-- 10. Wijzigingen -->
+                <div data-animate="up">
+                    <h2 class="font-headline text-2xl font-bold text-charcoal uppercase tracking-tight mb-6">
+                        10. Wijzigingen aan dit beleid
+                    </h2>
+                    <p>
+                        SolArt behoudt zich het recht voor dit privacybeleid te allen tijde te wijzigen.
+                        De meest recente versie is steeds beschikbaar op deze pagina. Wij raden u aan dit
+                        beleid periodiek te raadplegen.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ═══════════════════════════════════════════
+         FOOTER
+         ═══════════════════════════════════════════ -->
+    <footer class="bg-charcoal text-white pt-32 pb-16">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-20 px-8 lg:px-12 w-full max-w-[1600px] mx-auto mb-32">
+            <div class="md:col-span-1">
+                <div class="text-2xl font-extrabold tracking-[0.2em] text-white mb-10 font-headline uppercase">SolArt</div>
+                <p class="text-white/40 font-body text-sm leading-relaxed font-light">
+                    Uw expert in duurzame energie-oplossingen. Wij bouwen aan de elektrische infrastructuur van morgen
+                    met passie en precisie.
+                </p>
+                <div class="flex items-center gap-4 mt-8">
+                    <a href="https://www.instagram.com/solart.be/" target="_blank" rel="noopener noreferrer"
+                        class="text-white/40 hover:text-bronze transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h6 class="text-bronze font-label font-bold mb-8 text-[11px] uppercase tracking-[0.3em]">Diensten</h6>
+                <ul class="space-y-4">
+                    <li><a class="text-white/50 font-body text-sm hover:text-white transition-colors font-light"
+                            href="laadpalen-zonnepanelen.html">Laadpalen, Zonnepanelen & Batterijen</a></li>
+                    <li><a class="text-white/50 font-body text-sm hover:text-white transition-colors font-light"
+                            href="elektriciteitswerken.html">Elektriciteitswerken</a></li>
+                </ul>
+            </div>
+            <div>
+                <h6 class="text-bronze font-label font-bold mb-8 text-[11px] uppercase tracking-[0.3em]">Bedrijf</h6>
+                <ul class="space-y-4">
+                    <li><a class="text-white/50 font-body text-sm hover:text-white transition-colors font-light"
+                            href="index.html">Home</a></li>
+                    <li><a class="text-white/50 font-body text-sm hover:text-white transition-colors font-light"
+                            href="index.html#projecten">Projecten</a></li>
+                    <li><a class="text-white/50 font-body text-sm hover:text-white transition-colors font-light"
+                            href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h6 class="text-bronze font-label font-bold mb-8 text-[11px] uppercase tracking-[0.3em]">Juridisch</h6>
+                <ul class="space-y-4">
+                    <li><a class="text-white/50 font-body text-sm hover:text-white transition-colors font-light border-b border-bronze/40 pb-1 text-white"
+                            href="privacy.html">Privacybeleid</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-white/5 pt-12 px-8 lg:px-12 text-center">
+            <p class="text-white/20 font-label text-[10px] font-bold tracking-[0.2em] uppercase">
+                © 2026 SolArt. Alle rechten voorbehouden.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Main JS -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

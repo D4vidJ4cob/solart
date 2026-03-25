@@ -182,23 +182,46 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ── Form handling ──────────────────────────
+    // ── Form handling (Netlify Forms via fetch) ─
     const contactForm = document.getElementById('contact-form');
 
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
             const formData = new FormData(contactForm);
-            const name = formData.get('name');
+            const name    = formData.get('name');
+            const submitBtn = contactForm.querySelector('[type="submit"]');
 
-            // Show success toast
-            showToast(`Bedankt${name ? ', ' + name : ''}! Uw aanvraag is verzonden. Wij nemen snel contact met u op.`);
+            // Disable button while submitting
+            if (submitBtn) {
+                submitBtn.disabled     = true;
+                submitBtn.style.opacity = '0.6';
+            }
 
-            // Reset form
-            contactForm.reset();
-            contactForm.classList.add('form-success');
-            setTimeout(() => contactForm.classList.remove('form-success'), 600);
+            try {
+                const response = await fetch('/', {
+                    method:  'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body:    new URLSearchParams(formData).toString(),
+                });
+
+                if (response.ok) {
+                    showToast(`Bedankt${name ? ', ' + name : ''}! Uw aanvraag is verzonden. Wij nemen snel contact met u op.`);
+                    contactForm.reset();
+                    contactForm.classList.add('form-success');
+                    setTimeout(() => contactForm.classList.remove('form-success'), 600);
+                } else {
+                    throw new Error('Server antwoord niet OK');
+                }
+            } catch (err) {
+                showToast('Er ging iets mis bij het verzenden. Bel ons of stuur een e-mail.', 8000);
+            } finally {
+                if (submitBtn) {
+                    submitBtn.disabled      = false;
+                    submitBtn.style.opacity = '';
+                }
+            }
         });
     }
 

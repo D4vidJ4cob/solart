@@ -1,0 +1,15 @@
+{
+  "name": "solart",
+  "version": "1.0.0",
+  "description": "SolArt — Uw partner voor duurzame energie",
+  "scripts": {
+    "build": "tailwindcss -i ./css/input.css -o ./css/output.css --minify",
+    "dev": "tailwindcss -i ./css/input.css -o ./css/output.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.7",
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.33",
+    "tailwindcss": "^3.4.3"
+  }
+}

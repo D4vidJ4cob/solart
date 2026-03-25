@@ -8,63 +8,53 @@
     <meta name="description"
         content="SolArt — Uw partner voor duurzame energie. Zonnepanelen, batterijen, laadpalen en elektriciteitswerken voor woning en bedrijf in België." />
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://www.solart.be/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type"        content="website" />
+    <meta property="og:url"         content="https://www.solart.be/" />
+    <meta property="og:site_name"   content="SolArt" />
+    <meta property="og:locale"      content="nl_BE" />
+    <meta property="og:title"       content="SolArt | Uw Partner voor Duurzame Energie" />
+    <meta property="og:description" content="SolArt — Uw partner voor duurzame energie. Zonnepanelen, batterijen, laadpalen en elektriciteitswerken voor woning en bedrijf in België." />
+    <meta property="og:image"       content="https://www.solart.be/img/og-image.jpg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card"        content="summary_large_image" />
+    <meta name="twitter:title"       content="SolArt | Uw Partner voor Duurzame Energie" />
+    <meta name="twitter:description" content="SolArt — Uw partner voor duurzame energie. Zonnepanelen, batterijen, laadpalen en elektriciteitswerken voor woning en bedrijf in België." />
+    <meta name="twitter:image"       content="https://www.solart.be/img/og-image.jpg" />
+
+    <!-- Structured Data — LocalBusiness -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "SolArt",
+        "description": "Uw partner voor duurzame energie: zonnepanelen, batterijen, laadpalen en elektriciteitswerken.",
+        "url": "https://www.solart.be",
+        "telephone": "+3201145678",
+        "email": "info@solart.be",
+        "address": { "@type": "PostalAddress", "addressCountry": "BE" },
+        "sameAs": ["https://www.instagram.com/solart.be/"]
+    }
+    </script>
 
     <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@300;400;500&family=Manrope:wght@500;600;700&display=swap"
         rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet" />
 
-    <!-- Custom styles -->
-    <link rel="stylesheet" href="css/styles.css" />
-
-    <!-- Tailwind config -->
-    <script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "charcoal": "#121212",
-                        "charcoal-light": "#1E1E1E",
-                        "bronze": "#A67C52",
-                        "bronze-dark": "#8B6543",
-                        "pristine": "#FFFFFF",
-                        "soft-gray": "#F5F5F5",
-                        "border-gray": "#E5E5E5"
-                    },
-                    fontFamily: {
-                        "headline": ["Plus Jakarta Sans"],
-                        "body": ["Inter"],
-                        "label": ["Manrope"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0px",
-                        "lg": "0px",
-                        "xl": "0px",
-                        "full": "9999px"
-                    },
-                },
-            },
-        }
-    </script>
-
-    <style type="text/tailwindcss">
-        @layer base {
-            body {
-                @apply bg-white text-charcoal antialiased;
-            }
-        }
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
-        .gallery-overlay {
-            background: linear-gradient(to top, rgba(18,18,18,0.8) 0%, rgba(18,18,18,0) 100%);
-        }
-    </style>
+    <!-- Compiled CSS (Tailwind + custom styles) -->
+    <link rel="stylesheet" href="css/output.css" />
 </head>
 
 <body class="font-body selection:bg-bronze selection:text-white">
@@ -405,7 +395,13 @@
                             class="font-headline text-4xl md:text-5xl font-bold text-charcoal tracking-tight mb-16 uppercase">
                             Maak Vandaag de <br /><span class="text-bronze">Slimme Keuze</span>
                         </h2>
-                        <form id="contact-form" class="space-y-12">
+                        <form id="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="space-y-12">
+                            <!-- Netlify hidden fields -->
+                            <input type="hidden" name="form-name" value="contact" />
+                            <!-- Honeypot: bots vullen dit in, mensen niet -->
+                            <p class="hidden" aria-hidden="true">
+                                <label>Laat dit leeg: <input name="bot-field" /></label>
+                            </p>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                                 <div
                                     class="border-b border-border-gray focus-within:border-bronze transition-colors py-4">
@@ -456,7 +452,7 @@
                                     <h5
                                         class="font-label font-bold text-[10px] uppercase tracking-[0.2em] text-charcoal/40 mb-2">
                                         Bel Ons</h5>
-                                    <p class="text-charcoal font-headline text-xl">+32 (0) 11 45 67 89</p>
+                                    <a href="tel:+3201145678" class="text-charcoal font-headline text-xl hover:text-bronze transition-colors">+32 (0) 11 45 67 89</a>
                                 </div>
                             </div>
                             <div class="flex items-start gap-8">
@@ -465,7 +461,7 @@
                                     <h5
                                         class="font-label font-bold text-[10px] uppercase tracking-[0.2em] text-charcoal/40 mb-2">
                                         E-mail Ons</h5>
-                                    <p class="text-charcoal font-headline text-xl">info@solart.be</p>
+                                    <a href="mailto:info@solart.be" class="text-charcoal font-headline text-xl hover:text-bronze transition-colors">info&#64;solart.be</a>
                                 </div>
                             </div>
                             <a href="https://www.instagram.com/solart.be/" target="_blank" rel="noopener noreferrer"
@@ -542,7 +538,7 @@
                 <h6 class="text-bronze font-label font-bold mb-8 text-[11px] uppercase tracking-[0.3em]">Juridisch</h6>
                 <ul class="space-y-4">
                     <li><a class="text-white/50 font-body text-sm hover:text-white transition-colors font-light"
-                            href="#">Privacybeleid</a></li>
+                            href="privacy.html">Privacybeleid</a></li>
                     <li><a class="text-white/50 font-body text-sm hover:text-white transition-colors font-light"
                             href="#">Algemene Voorwaarden</a></li>
                     <li><a class="text-white/50 font-body text-sm hover:text-white transition-colors font-light"
