@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html class="light" lang="nl">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Elektriciteitswerken | SolArt</title>
+    <meta name="description"
+        content="Van nieuwbouw tot renovatie: SolArt verzorgt al uw elektriciteitswerken. Zekeringkasten, bekabeling, verlichting, keuring en conformiteit — vakkundig en betrouwbaar." />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@300;400;500&family=Manrope:wght@500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Tailwind config -->
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "charcoal": "#121212",
+                        "charcoal-light": "#1E1E1E",
+                        "bronze": "#A67C52",
+                        "bronze-dark": "#8B6543",
+                        "pristine": "#FFFFFF",
+                        "soft-gray": "#F5F5F5",
+                        "border-gray": "#E5E5E5"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-white text-charcoal antialiased;
+            }
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="font-body selection:bg-bronze selection:text-white">
+
+    <!-- ═══════════════════════════════════════════
+         NAVIGATION
+         ═══════════════════════════════════════════ -->
+    <nav id="main-nav" class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-border-gray">
+        <div class="flex justify-between items-center px-8 lg:px-12 py-5 max-w-[1600px] mx-auto">
+            <!-- Logo -->
+            <a href="index.html" class="text-2xl font-extrabold tracking-[0.2em] text-charcoal font-headline uppercase">
+                SolArt
+            </a>
+
+            <!-- Desktop nav links -->
+            <div class="hidden lg:flex items-center space-x-12">
+                <a class="nav-link font-label text-[11px] font-bold tracking-[0.2em] text-charcoal/50 hover:text-bronze transition-colors duration-300 uppercase"
+                    href="index.html">Home</a>
+                <div class="relative group" id="diensten-dropdown">
+                    <button
+                        class="nav-link font-label text-[11px] font-bold tracking-[0.2em] text-charcoal border-b border-charcoal uppercase flex items-center gap-1">
+                        Diensten
+                        <span
+                            class="material-symbols-outlined text-xs transition-transform group-hover:rotate-180">expand_more</span>
+                    </button>
+                    <div
+                        class="diensten-menu absolute top-full left-0 mt-2 w-72 bg-white border border-border-gray shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <a class="block px-6 py-3 text-[11px] font-label font-bold tracking-[0.15em] text-charcoal/50 hover:text-bronze hover:bg-soft-gray transition-all uppercase"
+                            href="laadpalen-zonnepanelen.html">Laadpalen, Zonnepanelen & Batterijen</a>
+                        <a class="block px-6 py-3 text-[11px] font-label font-bold tracking-[0.15em] text-bronze bg-soft-gray transition-all uppercase"
+                            href="elektriciteitswerken.html">Elektriciteitswerken</a>
+                    </div>
+                </div>
+                <a class="nav-link font-label text-[11px] font-bold tracking-[0.2em] text-charcoal/50 hover:text-bronze transition-colors duration-300 uppercase"
+                    href="index.html#projecten">Projecten</a>
+                <a class="nav-link font-label text-[11px] font-bold tracking-[0.2em] text-charcoal/50 hover:text-bronze transition-colors duration-300 uppercase"
+                    href="index.html#contact">Contact</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <!-- CTA button -->
+                <a href="index.html#contact"
+                    class="hidden sm:block bg-charcoal text-white px-8 py-3 font-label text-[11px] font-bold tracking-[0.2em] uppercase transition-all duration-300 hover:bg-bronze">
+                    Offerte Aanvragen
+                </a>
+
+                <!-- Hamburger button (mobile) -->
+                <button id="hamburger-btn"
+                    class="hamburger lg:hidden flex flex-col justify-center items-center gap-[6px] w-10 h-10"
+                    aria-label="Menu openen">
+                    <span class="hamburger-line block w-6 h-[2px] bg-charcoal origin-center"></span>
+                    <span class="hamburger-line block w-6 h-[2px] bg-charcoal origin-center"></span>
+                    <span class="hamburger-line block w-6 h-[2px] bg-charcoal origin-center"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="mobile-menu lg:hidden border-t border-border-gray bg-white/95 backdrop-blur-xl">
+            <div class="flex flex-col px-8 py-6 space-y-5">
+                <a class="font-label text-[11px] font-bold tracking-[0.2em] text-charcoal/50 hover:text-bronze transition-all uppercase"
+                    href="index.html">Home</a>
+                <div>
+                    <button id="mobile-diensten-toggle"
+                        class="font-label text-[11px] font-bold tracking-[0.2em] text-charcoal hover:text-bronze transition-all flex items-center gap-1 w-full uppercase">
+                        Diensten
+                        <span class="material-symbols-outlined text-xs transition-transform"
+                            id="mobile-diensten-arrow">expand_more</span>
+                    </button>
+                    <div id="mobile-diensten-sub" class="mobile-submenu pl-4 mt-3 space-y-3 border-l border-bronze/30">
+                        <a class="block font-label text-[11px] font-bold tracking-[0.2em] text-charcoal/50 hover:text-bronze transition-all uppercase"
+                            href="laadpalen-zonnepanelen.html">Laadpalen, Zonnepanelen & Batterijen</a>
+                        <a class="block font-label text-[11px] font-bold tracking-[0.2em] text-bronze transition-all uppercase"
+                            href="elektriciteitswerken.html">Elektriciteitswerken</a>
+                    </div>
+                </div>
+                <a class="font-label text-[11px] font-bold tracking-[0.2em] text-charcoal/50 hover:text-bronze transition-all uppercase"
+                    href="index.html#projecten">Projecten</a>
+                <a class="font-label text-[11px] font-bold tracking-[0.2em] text-charcoal/50 hover:text-bronze transition-all uppercase"
+                    href="index.html#contact">Contact</a>
+                <a href="index.html#contact"
+                    class="sm:hidden w-full bg-charcoal text-white px-6 py-3 font-label text-[11px] font-bold tracking-[0.2em] uppercase hover:bg-bronze transition-all mt-2 text-center">
+                    Offerte Aanvragen
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════
+         MAIN CONTENT
+         ═══════════════════════════════════════════ -->
+    <main>
+
+        <!-- ─── Hero Banner ─────────────────────── -->
+        <section class="relative min-h-[70vh] lg:min-h-[80vh] w-full flex items-center overflow-hidden bg-charcoal">
+            <div class="absolute inset-0 z-0 opacity-50">
+                <img alt="Professionele elektrische installatie door SolArt"
+                    class="w-full h-full object-cover"
+                    src="img/project-electrical.png" />
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-r from-charcoal/90 via-charcoal/60 to-transparent z-[1]"></div>
+            <div class="relative z-10 max-w-[1600px] mx-auto px-8 lg:px-12 w-full pt-32 pb-20 lg:pt-40 lg:pb-28">
+                <div class="max-w-3xl" data-animate="left">
+                    <span
+                        class="inline-block font-label text-[12px] font-bold tracking-[0.3em] text-bronze uppercase mb-6">
+                        Elektrische Installaties
+                    </span>
+                    <h1
+                        class="font-headline text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.05] mb-8 uppercase">
+                        Elektriciteits&shy;werken <br /><span class="text-white/40 italic font-light">op maat</span>
+                    </h1>
+                    <p class="text-lg lg:text-xl text-white/60 mb-10 font-body leading-relaxed max-w-2xl font-light">
+                        Of u nu bouwt, renoveert of uw installatie wil laten keuren — SolArt levert vakkundige
+                        elektriciteitswerken voor particulieren en bedrijven. Veilig, conform en toekomstbestendig.
+                    </p>
+                    <a href="index.html#contact"
+                        class="inline-flex items-center bg-bronze text-white px-12 py-5 font-label text-xs font-bold tracking-[0.2em] uppercase transition-all hover:bg-bronze-dark gap-3 btn-ripple">
+                        VRIJBLIJVENDE OFFERTE
+                        <span class="material-symbols-outlined text-sm">trending_flat</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── Intro Section ───────────────────── -->
+        <section class="py-20 lg:py-28 px-8 lg:px-12 bg-white">
+            <div class="max-w-[1600px] mx-auto" data-animate="up">
+                <div class="max-w-4xl mx-auto text-center">
+                    <span class="text-bronze font-label text-[11px] font-bold tracking-[0.4em] uppercase mb-6 block">Volledig ontzorgd</span>
+                    <h2 class="font-headline text-3xl md:text-5xl font-bold text-charcoal tracking-tight mb-8 uppercase leading-tight">
+                        Eén aanspreekpunt voor <span class="text-bronze">al uw elektra</span>
+                    </h2>
+                    <p class="text-charcoal/50 font-body text-lg leading-relaxed font-light max-w-3xl mx-auto">
+                        SolArt begeleidt u van A tot Z: van de eerste schets van uw elektrisch schema tot de
+                        eindkeuring en conformiteitsattest. Wij combineren jarenlange vakkennis met een persoonlijke
+                        aanpak, zodat elke installatie veilig, netjes en toekomstgericht is.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── Nieuwbouw Section ───────────────── -->
+        <section id="nieuwbouw" class="py-20 lg:py-28 px-8 lg:px-12 bg-soft-gray">
+            <div class="max-w-[1600px] mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                    <!-- Image -->
+                    <div class="relative aspect-[4/3] overflow-hidden bg-charcoal" data-animate="left">
+                        <img alt="Elektrische installatie in nieuwbouwproject"
+                            class="w-full h-full object-cover transition-transform duration-[1.5s] hover:scale-105"
+                            src="img/project-electrical.png" />
+                        <div class="absolute top-6 left-6">
+                            <span class="bg-bronze text-white px-4 py-2 font-label text-[10px] font-bold tracking-[0.2em] uppercase">
+                                Nieuwbouw
+                            </span>
+                        </div>
+                    </div>
+                    <!-- Content -->
+                    <div data-animate="right">
+                        <span class="material-symbols-outlined text-5xl text-bronze mb-6 block">construction</span>
+                        <h2 class="font-headline text-3xl md:text-4xl font-bold text-charcoal tracking-tight mb-6 uppercase leading-tight">
+                            Nieuwbouw <span class="text-bronze">Installaties</span>
+                        </h2>
+                        <p class="text-charcoal/60 font-body text-base leading-relaxed mb-6 font-light">
+                            Bij een nieuwbouwproject legt u de elektrische basis voor tientallen jaren. Wij ontwerpen
+                            en installeren een toekomstgerichte elektra-infrastructuur die aansluit op uw plannen van
+                            vandaag én de technologieën van morgen.
+                        </p>
+                        <div class="space-y-4 mb-10">
+                            <div class="flex items-start gap-4">
+                                <span class="material-symbols-outlined text-bronze text-xl mt-0.5">check_circle</span>
+                                <p class="text-charcoal/70 font-body text-sm font-light">
+                                    <strong class="font-medium text-charcoal">Elektrisch schema op maat</strong> — Wij
+                                    tekenen een gedetailleerd plan dat voldoet aan alle geldende normen en uw persoonlijke
+                                    woonwensen weerspiegelt.
+                                </p>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span class="material-symbols-outlined text-bronze text-xl mt-0.5">check_circle</span>
+                                <p class="text-charcoal/70 font-body text-sm font-light">
+                                    <strong class="font-medium text-charcoal">Sleutel-op-de-deur</strong> — Van ruwbouw
+                                    tot afwerking: wij coördineren alle elektrafasen zodat u nergens naar hoeft om te zien.
+                                </p>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span class="material-symbols-outlined text-bronze text-xl mt-0.5">check_circle</span>
+                                <p class="text-charcoal/70 font-body text-sm font-light">
+                                    <strong class="font-medium text-charcoal">Klaar voor de toekomst</strong> — Wij
+                                    voorzien leidingen en capaciteit voor laadpalen, zonnepanelen en domotica, zonder
+                                    latere ingrepen.
+                                </p>
+                            </div>
+                        </div>
+                        <a href="index.html#contact"
+                            class="inline-flex items-center text-[11px] font-bold tracking-[0.2em] text-bronze uppercase hover:text-charcoal transition-colors">
+                            Vraag een offerte aan <span class="material-symbols-outlined ml-3 text-sm">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── Renovatie Section ───────────────── -->
+        <section id="renovatie" class="py-20 lg:py-28 px-8 lg:px-12 bg-white">
+            <div class="max-w-[1600px] mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                    <!-- Content (left on desktop) -->
+                    <div class="order-2 lg:order-1" data-animate="left">
+                        <span class="material-symbols-outlined text-5xl text-bronze mb-6 block">home_repair_service</span>
+                        <h2 class="font-headline text-3xl md:text-4xl font-bold text-charcoal tracking-tight mb-6 uppercase leading-tight">
+                            Renovatie <span class="text-bronze">& Modernisering</span>
+                        </h2>
+                        <p class="text-charcoal/60 font-body text-base leading-relaxed mb-6 font-light">
+                            Een verouderde elektrische installatie is niet alleen onpraktisch — ze kan ook gevaarlijk
+                            zijn. Bij een renovatie brengen wij uw volledige elektra discreet en vakkundig up-to-date,
+                            met minimale hinder voor uw dagelijks leven.
+                        </p>
+                        <div class="space-y-4 mb-10">
+                            <div class="flex items-start gap-4">
+                                <span class="material-symbols-outlined text-bronze text-xl mt-0.5">check_circle</span>
+                                <p class="text-charcoal/70 font-body text-sm font-light">
+                                    <strong class="font-medium text-charcoal">Volledige herbekabeling</strong> — Verouderd
+                                    of onveilig bedrading wordt volledig vervangen door moderne, genormeerde kabels.
+                                </p>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span class="material-symbols-outlined text-bronze text-xl mt-0.5">check_circle</span>
+                                <p class="text-charcoal/70 font-body text-sm font-light">
+                                    <strong class="font-medium text-charcoal">Nieuwe zekeringkast</strong> — Een moderne
+                                    verdeelinrichting met aardlekbeveiliging geeft u controle en bescherming op alle circuits.
+                                </p>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span class="material-symbols-outlined text-bronze text-xl mt-0.5">check_circle</span>
+                                <p class="text-charcoal/70 font-body text-sm font-light">
+                                    <strong class="font-medium text-charcoal">Uitbreiding van groepen</strong> — Extra
+                                    stopcontacten, verlichtingspunten of krachtstroom toegevoegd waar u ze nodig heeft.
+                                </p>
+                            </div>
+                        </div>
+                        <a href="index.html#contact"
+                            class="inline-flex items-center text-[11px] font-bold tracking-[0.2em] text-bronze uppercase hover:text-charcoal transition-colors">
+                            Vraag een offerte aan <span class="material-symbols-outlined ml-3 text-sm">arrow_forward</span>
+                        </a>
+                    </div>
+                    <!-- Image (right on desktop) -->
+                    <div class="relative aspect-[4/3] overflow-hidden bg-charcoal order-1 lg:order-2" data-animate="right">
+                        <img alt="Renovatie van elektrische installatie in woning"
+                            class="w-full h-full object-cover transition-transform duration-[1.5s] hover:scale-105"
+                            src="img/project-battery.png" />
+                        <div class="absolute top-6 right-6">
+                            <span class="bg-bronze text-white px-4 py-2 font-label text-[10px] font-bold tracking-[0.2em] uppercase">
+                                Renovatie
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── Verlichting Section ─────────────── -->
+        <section id="verlichting" class="py-20 lg:py-28 px-8 lg:px-12 bg-soft-gray">
+            <div class="max-w-[1600px] mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                    <!-- Image -->
+                    <div class="relative aspect-[4/3] overflow-hidden bg-charcoal" data-animate="left">
+                        <img alt="Sfeervolle LED-verlichting en domotica in moderne woning"
+                            class="w-full h-full object-cover transition-transform duration-[1.5s] hover:scale-105"
+                            src="img/project-solar.png" />
+                        <div class="absolute top-6 left-6">
+                            <span class="bg-bronze text-white px-4 py-2 font-label text-[10px] font-bold tracking-[0.2em] uppercase">
+                                Verlichting
+                            </span>
+                        </div>
+                    </div>
+                    <!-- Content -->
+                    <div data-animate="right">
+                        <span class="material-symbols-outlined text-5xl text-bronze mb-6 block">light_mode</span>
+                        <h2 class="font-headline text-3xl md:text-4xl font-bold text-charcoal tracking-tight mb-6 uppercase leading-tight">
+                            Verlichting <span class="text-bronze">& Domotica</span>
+                        </h2>
+                        <p class="text-charcoal/60 font-body text-base leading-relaxed mb-6 font-light">
+                            De juiste verlichting transformeert een ruimte. Wij installeren energiezuinige
+                            LED-systemen en koppelen ze, indien gewenst, aan een slim domoticasysteem — zodat
+                            u uw woning of kantoor met één druk op de knop of via uw smartphone bestuurt.
+                        </p>
+                        <div class="space-y-4 mb-10">
+                            <div class="flex items-start gap-4">
+                                <span class="material-symbols-outlined text-bronze text-xl mt-0.5">check_circle</span>
+                                <p class="text-charcoal/70 font-body text-sm font-light">
+                                    <strong class="font-medium text-charcoal">LED & inbouwverlichting</strong> — Spots,
+                                    LED-strips, buitenverlichting en armaturen — wij plaatsen en bekabelen alles netjes.
+                                </p>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span class="material-symbols-outlined text-bronze text-xl mt-0.5">check_circle</span>
+                                <p class="text-charcoal/70 font-body text-sm font-light">
+                                    <strong class="font-medium text-charcoal">Slimme bediening</strong> — Bewegingssensoren,
+                                    dimbare schakelaars en tijdschakelaars voor maximaal comfort en energie-efficiëntie.
+                                </p>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span class="material-symbols-outlined text-bronze text-xl mt-0.5">check_circle</span>
+                                <p class="text-charcoal/70 font-body text-sm font-light">
+                                    <strong class="font-medium text-charcoal">Domotica-integratie</strong> — Wij bereiden
+                                    uw elektra-infrastructuur voor op koppeling met populaire smart-home platformen.
+                                </p>
+                            </div>
+                        </div>
+                        <a href="index.html#contact"
+                            class="inline-flex items-center text-[11px] font-bold tracking-[0.2em] text-bronze uppercase hover:text-charcoal transition-colors">
+                            Vraag een offerte aan <span class="material-symbols-outlined ml-3 text-sm">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── Services Grid ───────────────────── -->
+        <section class="py-20 lg:py-28 px-8 lg:px-12 bg-white">
+            <div class="max-w-[1600px] mx-auto">
+                <div class="max-w-2xl mb-16" data-animate="left">
+                    <span class="text-bronze font-label text-[11px] font-bold tracking-[0.4em] uppercase mb-6 block">Volledig pakket</span>
+                    <h2 class="font-headline text-3xl md:text-5xl font-bold text-charcoal tracking-tight uppercase leading-tight">
+                        Meer elektra&shy;diensten
+                    </h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-border-gray" data-animate="up">
+
+                    <!-- Card 1 -->
+                    <div class="group bg-white p-10 lg:p-12 hover:bg-charcoal transition-all duration-500">
+                        <span class="material-symbols-outlined text-3xl text-bronze mb-6 block group-hover:text-bronze">electrical_services</span>
+                        <h3 class="font-headline text-lg font-bold text-charcoal group-hover:text-white uppercase tracking-tight mb-3">
+                            Zekeringkasten
+                        </h3>
+                        <p class="text-charcoal/50 group-hover:text-white/60 font-body text-sm font-light leading-relaxed">
+                            Vervanging of upgrade van uw verdeelinrichting met moderne differentiaalschakelaars
+                            en groepsbescherming conform de AREI-normen.
+                        </p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="group bg-white p-10 lg:p-12 hover:bg-charcoal transition-all duration-500" data-animate-delay="100">
+                        <span class="material-symbols-outlined text-3xl text-bronze mb-6 block group-hover:text-bronze">power</span>
+                        <h3 class="font-headline text-lg font-bold text-charcoal group-hover:text-white uppercase tracking-tight mb-3">
+                            Stopcontacten & Schakelaars
+                        </h3>
+                        <p class="text-charcoal/50 group-hover:text-white/60 font-body text-sm font-light leading-relaxed">
+                            Plaatsing of verplaatsing van stopcontacten, USB-punten, wandcontactdozen en
+                            schakelaars — discreet weggewerkt in wand of plafond.
+                        </p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="group bg-white p-10 lg:p-12 hover:bg-charcoal transition-all duration-500" data-animate-delay="200">
+                        <span class="material-symbols-outlined text-3xl text-bronze mb-6 block group-hover:text-bronze">schema</span>
+                        <h3 class="font-headline text-lg font-bold text-charcoal group-hover:text-white uppercase tracking-tight mb-3">
+                            Elektrische Schema's
+                        </h3>
+                        <p class="text-charcoal/50 group-hover:text-white/60 font-body text-sm font-light leading-relaxed">
+                            Wij tekenen gedetailleerde eendraadschema's en situatieplans voor vergunningen,
+                            keuringen en uw eigen dossier — overzichtelijk en up-to-date.
+                        </p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="group bg-white p-10 lg:p-12 hover:bg-charcoal transition-all duration-500" data-animate-delay="100">
+                        <span class="material-symbols-outlined text-3xl text-bronze mb-6 block group-hover:text-bronze">report_problem</span>
+                        <h3 class="font-headline text-lg font-bold text-charcoal group-hover:text-white uppercase tracking-tight mb-3">
+                            Noodreparaties
+                        </h3>
+                        <p class="text-charcoal/50 group-hover:text-white/60 font-body text-sm font-light leading-relaxed">
+                            Stroomuitval, kortsluitingen of defecte groepen? Wij reageren snel en lossen
+                            elektrische storingen op een veilige en doortastende manier op.
+                        </p>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="group bg-white p-10 lg:p-12 hover:bg-charcoal transition-all duration-500" data-animate-delay="200">
+                        <span class="material-symbols-outlined text-3xl text-bronze mb-6 block group-hover:text-bronze">offline_bolt</span>
+                        <h3 class="font-headline text-lg font-bold text-charcoal group-hover:text-white uppercase tracking-tight mb-3">
+                            Krachtstroom
+                        </h3>
+                        <p class="text-charcoal/50 group-hover:text-white/60 font-body text-sm font-light leading-relaxed">
+                            Driefasige aansluitingen voor professionele toepassingen, ateliers,
+                            warmtepompen of groot elektrisch materieel — veilig gedimensioneerd.
+                        </p>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="group bg-white p-10 lg:p-12 hover:bg-charcoal transition-all duration-500" data-animate-delay="300">
+                        <span class="material-symbols-outlined text-3xl text-bronze mb-6 block group-hover:text-bronze">verified_user</span>
+                        <h3 class="font-headline text-lg font-bold text-charcoal group-hover:text-white uppercase tracking-tight mb-3">
+                            Conformiteitskeuring
+                        </h3>
+                        <p class="text-charcoal/50 group-hover:text-white/60 font-body text-sm font-light leading-relaxed">
+                            Begeleiding bij de AREI-keuring: wij brengen uw installatie vooraf in orde
+                            zodat u zonder verrassingen een positief keuringsverslag ontvangt.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── Keuring Section ─────────────────── -->
+        <section id="keuring" class="py-20 lg:py-28 px-8 lg:px-12 bg-soft-gray">
+            <div class="max-w-[1600px] mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                    <!-- Content (left on desktop) -->
+                    <div class="order-2 lg:order-1" data-animate="left">
+                        <span class="material-symbols-outlined text-5xl text-bronze mb-6 block">verified</span>
+                        <h2 class="font-headline text-3xl md:text-4xl font-bold text-charcoal tracking-tight mb-6 uppercase leading-tight">
+                            Keuring <span class="text-bronze">& Conformiteit</span>
+                        </h2>
+                        <p class="text-charcoal/60 font-body text-base leading-relaxed mb-6 font-light">
+                            Een gekeurd conformiteitsattest is wettelijk verplicht bij de verkoop of verhuur
+                            van een woning. Wij helpen u uw installatie in orde te brengen en begeleiden u
+                            tijdens het volledige keuringsproces — zonder extra zorgen.
+                        </p>
+                        <div class="space-y-4 mb-10">
+                            <div class="flex items-start gap-4">
+                                <span class="material-symbols-outlined text-bronze text-xl mt-0.5">check_circle</span>
+                                <p class="text-charcoal/70 font-body text-sm font-light">
+                                    <strong class="font-medium text-charcoal">Voorinspectie</strong> — Wij controleren
+                                    uw installatie voor de officiële keuring en herstellen eventuele inbreuken discreet.
+                                </p>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span class="material-symbols-outlined text-bronze text-xl mt-0.5">check_circle</span>
+                                <p class="text-charcoal/70 font-body text-sm font-light">
+                                    <strong class="font-medium text-charcoal">Begeleiding keuringsorgaan</strong> — Wij
+                                    coördineren de afspraak met een erkend keuringsorgaan en staan aanwezig bij de keuring.
+                                </p>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span class="material-symbols-outlined text-bronze text-xl mt-0.5">check_circle</span>
+                                <p class="text-charcoal/70 font-body text-sm font-light">
+                                    <strong class="font-medium text-charcoal">Conform AREI</strong> — Elke installatie
+                                    die wij plaatsen voldoet aan het Algemeen Reglement op de Elektrische Installaties.
+                                </p>
+                            </div>
+                        </div>
+                        <a href="index.html#contact"
+                            class="inline-flex items-center text-[11px] font-bold tracking-[0.2em] text-bronze uppercase hover:text-charcoal transition-colors">
+                            Vraag een offerte aan <span class="material-symbols-outlined ml-3 text-sm">arrow_forward</span>
+                        </a>
+                    </div>
+                    <!-- Image (right on desktop) -->
+                    <div class="relative aspect-[4/3] overflow-hidden bg-charcoal order-1 lg:order-2" data-animate="right">
+                        <img alt="Elektrische keuring en conformiteitscontrole"
+                            class="w-full h-full object-cover transition-transform duration-[1.5s] hover:scale-105"
+                            src="img/project-charging.png" />
+                        <div class="absolute top-6 right-6">
+                            <span class="bg-bronze text-white px-4 py-2 font-label text-[10px] font-bold tracking-[0.2em] uppercase">
+                                AREI Conform
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── Stats Bar ───────────────────────── -->
+        <section class="bg-charcoal py-16 lg:py-20 px-8 lg:px-12">
+            <div class="max-w-[1600px] mx-auto">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center" data-animate="up">
+                    <div>
+                        <div class="text-white font-headline text-4xl lg:text-5xl font-bold" data-counter="350" data-suffix="+">0</div>
+                        <div class="text-white/40 font-label text-[10px] uppercase tracking-[0.2em] mt-3">Projecten voltooid</div>
+                    </div>
+                    <div>
+                        <div class="text-white font-headline text-4xl lg:text-5xl font-bold" data-counter="98" data-suffix="%">0</div>
+                        <div class="text-white/40 font-label text-[10px] uppercase tracking-[0.2em] mt-3">Tevredenheid</div>
+                    </div>
+                    <div>
+                        <div class="text-white font-headline text-4xl lg:text-5xl font-bold" data-counter="12" data-suffix="+">0</div>
+                        <div class="text-white/40 font-label text-[10px] uppercase tracking-[0.2em] mt-3">Jaar Ervaring</div>
+                    </div>
+                    <div>
+                        <div class="text-white font-headline text-4xl lg:text-5xl font-bold" data-counter="100" data-suffix="%">0</div>
+                        <div class="text-white/40 font-label text-[10px] uppercase tracking-[0.2em] mt-3">AREI Conform</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── CTA Section ─────────────────────── -->
+        <section class="py-24 lg:py-32 px-8 lg:px-12 bg-white">
+            <div class="max-w-[1600px] mx-auto text-center" data-animate="up">
+                <span class="text-bronze font-label text-[11px] font-bold tracking-[0.4em] uppercase mb-6 block">Klaar om te starten?</span>
+                <h2 class="font-headline text-3xl md:text-5xl font-bold text-charcoal tracking-tight mb-8 uppercase">
+                    Laat uw installatie <span class="text-bronze">vakkundig</span> aanpakken
+                </h2>
+                <p class="text-charcoal/50 font-body text-lg leading-relaxed font-light max-w-2xl mx-auto mb-12">
+                    Heeft u een project in gedachten — nieuwbouw, renovatie, keuring of een spoedgeval?
+                    Neem vandaag vrijblijvend contact op. Wij analyseren uw situatie en bezorgen u een
+                    heldere offerte zonder verborgen kosten.
+                </p>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="index.html#contact"
+                        class="bg-charcoal text-white px-12 py-5 font-label text-xs font-bold tracking-[0.2em] uppercase transition-all hover:bg-bronze flex items-center gap-3 btn-ripple">
+                        OFFERTE AANVRAGEN
+                        <span class="material-symbols-outlined text-sm">trending_flat</span>
+                    </a>
+                    <a href="tel:+3201145678"
+                        class="border border-charcoal/20 text-charcoal px-12 py-5 font-label text-xs font-bold tracking-[0.2em] uppercase transition-all hover:bg-charcoal hover:text-white btn-ripple flex items-center gap-3">
+                        <span class="material-symbols-outlined text-sm">call</span>
+                        BEL ONS
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ═══════════════════════════════════════════
+         FOOTER
+         ═══════════════════════════════════════════ -->
+    <footer class="bg-charcoal text-white pt-32 pb-16">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-20 px-8 lg:px-12 w-full max-w-[1600px] mx-auto mb-32">
+            <div class="md:col-span-1">
+                <div class="text-2xl font-extrabold tracking-[0.2em] text-white mb-10 font-headline uppercase">SolArt
+                </div>
+                <p class="text-white/40 font-body text-sm leading-relaxed font-light">
+                    Uw expert in duurzame energie-oplossingen. Wij bouwen aan de elektrische infrastructuur van morgen
+                    met passie en precisie.
+                </p>
+                <div class="flex items-center gap-4 mt-8">
+                    <a href="https://www.instagram.com/solart.be/" target="_blank" rel="noopener noreferrer"
+                        class="text-white/40 hover:text-bronze transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h6 class="text-bronze font-label font-bold mb-8 text-[11px] uppercase tracking-[0.3em]">Diensten</h6>
+                <ul class="space-y-4">
+                    <li><a class="text-white/50 font-body text-sm hover:text-white transition-colors font-light"
+                            href="laadpalen-zonnepanelen.html">Laadpalen, Zonnepanelen & Batterijen</a></li>
+                    <li><a class="text-white/50 font-body text-sm hover:text-white transition-colors font-light"
+                            href="elektriciteitswerken.html">Elektriciteitswerken</a></li>
+                </ul>
+            </div>
+            <div>
+                <h6 class="text-bronze font-label font-bold mb-8 text-[11px] uppercase tracking-[0.3em]">Bedrijf</h6>
+                <ul class="space-y-4">
+                    <li><a class="text-white/50 font-body text-sm hover:text-white transition-colors font-light"
+                            href="index.html">Home</a></li>
+                    <li><a class="text-white/50 font-body text-sm hover:text-white transition-colors font-light"
+                            href="index.html#projecten">Projecten</a></li>
+                    <li><a class="text-white/50 font-body text-sm hover:text-white transition-colors font-light"
+                            href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h6 class="text-bronze font-label font-bold mb-8 text-[11px] uppercase tracking-[0.3em]">Juridisch</h6>
+                <ul class="space-y-4">
+                    <li><a class="text-white/50 font-body text-sm hover:text-white transition-colors font-light"
+                            href="#">Privacybeleid</a></li>
+                    <li><a class="text-white/50 font-body text-sm hover:text-white transition-colors font-light"
+                            href="#">Algemene Voorwaarden</a></li>
+                    <li><a class="text-white/50 font-body text-sm hover:text-white transition-colors font-light"
+                            href="#">Cookiebeleid</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-white/5 pt-12 px-8 lg:px-12 text-center">
+            <p class="text-white/20 font-label text-[10px] font-bold tracking-[0.2em] uppercase">
+                © 2026 SolArt. Alle rechten voorbehouden.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Main JS -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
