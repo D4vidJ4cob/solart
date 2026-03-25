@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html class="light" lang="nl">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Laadpalen, Zonnepanelen & Batterijen | SolArt</title>
+    <meta name="description"
+        content="Met een laadpaal, zonnepanelen of een thuisbatterij bespaart u op uw energiefactuur en draagt u bij aan het milieu. SolArt is uw partner voor groene energie." />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@300;400;500&family=Manrope:wght@500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Tailwind config -->
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "charcoal": "#121212",
+                        "charcoal-light": "#1E1E1E",
+                        "bronze": "#A67C52",
+                        "bronze-dark": "#8B6543",
+                        "pristine": "#FFFFFF",
+                        "soft-gray": "#F5F5F5",
+                        "border-gray": "#E5E5E5"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-white text-charcoal antialiased;
+            }
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="font-body selection:bg-bronze selection:text-white">
+
+    <!-- ═══════════════════════════════════════════
+         NAVIGATION
+         ═══════════════════════════════════════════ -->
+    <nav id="main-nav" class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-border-gray">
+        <div class="flex justify-between items-center px-8 lg:px-12 py-5 max-w-[1600px] mx-auto">
+            <!-- Logo -->
+            <a href="index.html" class="text-2xl font-extrabold tracking-[0.2em] text-charcoal font-headline uppercase">
+                SolArt
+            </a>
+
+            <!-- Desktop nav links -->
+            <div class="hidden lg:flex items-center space-x-12">
+                <a class="nav-link font-label text-[11px] font-bold tracking-[0.2em] text-charcoal/50 hover:text-bronze transition-colors duration-300 uppercase"
+                    href="index.html">Home</a>
+                <div class="relative group" id="diensten-dropdown">
+                    <button
+                        class="nav-link font-label text-[11px] font-bold tracking-[0.2em] text-charcoal border-b border-charcoal uppercase flex items-center gap-1">
+                        Diensten
+                        <span
+                            class="material-symbols-outlined text-xs transition-transform group-hover:rotate-180">expand_more</span>
+                    </button>
+                    <div
+                        class="diensten-menu absolute top-full left-0 mt-2 w-72 bg-white border border-border-gray shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <a class="block px-6 py-3 text-[11px] font-label font-bold tracking-[0.15em] text-bronze bg-soft-gray transition-all uppercase"
+                            href="laadpalen-zonnepanelen.html">Laadpalen, Zonnepanelen & Batterijen</a>
+                        <a class="block px-6 py-3 text-[11px] font-label font-bold tracking-[0.15em] text-charcoal/50 hover:text-bronze hover:bg-soft-gray transition-all uppercase"
+                            href="index.html#elektriciteit">Elektriciteitswerken</a>
+                    </div>
+                </div>
+                <a class="nav-link font-label text-[11px] font-bold tracking-[0.2em] text-charcoal/50 hover:text-bronze transition-colors duration-300 uppercase"
+                    href="index.html#projecten">Projecten</a>
+                <a class="nav-link font-label text-[11px] font-bold tracking-[0.2em] text-charcoal/50 hover:text-bronze transition-colors duration-300 uppercase"
+                    href="index.html#contact">Contact</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <!-- CTA button -->
+                <a href="index.html#contact"
+                    class="hidden sm:block bg-charcoal text-white px-8 py-3 font-label text-[11px] font-bold tracking-[0.2em] uppercase transition-all duration-300 hover:bg-bronze">
+                    Offerte Aanvragen
+                </a>
+
+                <!-- Hamburger button (mobile) -->
+                <button id="hamburger-btn"
+                    class="hamburger lg:hidden flex flex-col justify-center items-center gap-[6px] w-10 h-10"
+                    aria-label="Menu openen">
+                    <span class="hamburger-line block w-6 h-[2px] bg-charcoal origin-center"></span>
+                    <span class="hamburger-line block w-6 h-[2px] bg-charcoal origin-center"></span>
+                    <span class="hamburger-line block w-6 h-[2px] bg-charcoal origin-center"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="mobile-menu lg:hidden border-t border-border-gray bg-white/95 backdrop-blur-xl">
+            <div class="flex flex-col px-8 py-6 space-y-5">
+                <a class="font-label text-[11px] font-bold tracking-[0.2em] text-charcoal/50 hover:text-bronze transition-all uppercase"
+                    href="index.html">Home</a>
+                <div>
+                    <button id="mobile-diensten-toggle"
+                        class="font-label text-[11px] font-bold tracking-[0.2em] text-charcoal hover:text-bronze transition-all flex items-center gap-1 w-full uppercase">
+                        Diensten
+                        <span class="material-symbols-outlined text-xs transition-transform"
+                            id="mobile-diensten-arrow">expand_more</span>
+                    </button>
+                    <div id="mobile-diensten-sub" class="mobile-submenu pl-4 mt-3 space-y-3 border-l border-bronze/30">
+                        <a class="block font-label text-[11px] font-bold tracking-[0.2em] text-bronze transition-all uppercase"
+                            href="laadpalen-zonnepanelen.html">Laadpalen, Zonnepanelen & Batterijen</a>
+                        <a class="block font-label text-[11px] font-bold tracking-[0.2em] text-charcoal/50 hover:text-bronze transition-all uppercase"
+                            href="index.html#elektriciteit">Elektriciteitswerken</a>
+                    </div>
+                </div>
+                <a class="font-label text-[11px] font-bold tracking-[0.2em] text-charcoal/50 hover:text-bronze transition-all uppercase"
+                    href="index.html#projecten">Projecten</a>
+                <a class="font-label text-[11px] font-bold tracking-[0.2em] text-charcoal/50 hover:text-bronze transition-all uppercase"
+                    href="index.html#contact">Contact</a>
+                <a href="index.html#contact"
+                    class="sm:hidden w-full bg-charcoal text-white px-6 py-3 font-label text-[11px] font-bold tracking-[0.2em] uppercase hover:bg-bronze transition-all mt-2 text-center">
+                    Offerte Aanvragen
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════
+         MAIN CONTENT
+         ═══════════════════════════════════════════ -->
+    <main>
+
+        <!-- ─── Hero Banner ─────────────────────── -->
+        <section class="relative min-h-[70vh] lg:min-h-[80vh] w-full flex items-center overflow-hidden bg-charcoal">
+            <div class="absolute inset-0 z-0 opacity-50">
+                <img alt="Laadpalen en zonnepanelen op modern huis" class="w-full h-full object-cover"
+                    src="img/hero-green-energy.png" />
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-r from-charcoal/90 via-charcoal/60 to-transparent z-[1]"></div>
+            <div class="relative z-10 max-w-[1600px] mx-auto px-8 lg:px-12 w-full pt-32 pb-20 lg:pt-40 lg:pb-28">
+                <div class="max-w-3xl" data-animate="left">
+                    <span
+                        class="inline-block font-label text-[12px] font-bold tracking-[0.3em] text-bronze uppercase mb-6">
+                        Groene Energie
+                    </span>
+                    <h1
+                        class="font-headline text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.05] mb-8 uppercase">
+                        Laadpalen, Zonnepanelen <br /><span class="text-white/40 italic font-light">&</span> Thuisbatterijen
+                    </h1>
+                    <p class="text-lg lg:text-xl text-white/60 mb-10 font-body leading-relaxed max-w-2xl font-light">
+                        Samen zetten we de stap naar groene energie. Met een laadpaal, zonnepanelen of een thuisbatterij 
+                        bespaart u aanzienlijk op uw energiefactuur en draagt u bij aan een duurzamere planeet.
+                    </p>
+                    <a href="index.html#contact"
+                        class="inline-flex items-center bg-bronze text-white px-12 py-5 font-label text-xs font-bold tracking-[0.2em] uppercase transition-all hover:bg-bronze-dark gap-3 btn-ripple">
+                        VRIJBLIJVENDE OFFERTE
+                        <span class="material-symbols-outlined text-sm">trending_flat</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── Intro Section ───────────────────── -->
+        <section class="py-20 lg:py-28 px-8 lg:px-12 bg-white">
+            <div class="max-w-[1600px] mx-auto" data-animate="up">
+                <div class="max-w-4xl mx-auto text-center">
+                    <span class="text-bronze font-label text-[11px] font-bold tracking-[0.4em] uppercase mb-6 block">Uw betrouwbare partner</span>
+                    <h2 class="font-headline text-3xl md:text-5xl font-bold text-charcoal tracking-tight mb-8 uppercase leading-tight">
+                        Samen naar een <span class="text-bronze">groene toekomst</span>
+                    </h2>
+                    <p class="text-charcoal/50 font-body text-lg leading-relaxed font-light max-w-3xl mx-auto">
+                        SolArt is de uitgelezen partner om samen met u de stap naar groene energie te zetten. 
+                        Of het nu gaat om laadpalen, zonnepanelen of thuisbatterijen — wij bieden hoogwaardige 
+                        oplossingen die perfect aansluiten bij uw woning of bedrijf. Hieronder leest u meer 
+                        over elk van onze groene-energiediensten.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── Laadpalen Section ───────────────── -->
+        <section id="laadpalen" class="py-20 lg:py-28 px-8 lg:px-12 bg-soft-gray">
+            <div class="max-w-[1600px] mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                    <!-- Image -->
+                    <div class="relative aspect-[4/3] overflow-hidden bg-charcoal" data-animate="left">
+                        <img alt="Moderne laadpaal voor elektrisch voertuig"
+                            class="w-full h-full object-cover transition-transform duration-[1.5s] hover:scale-105"
+                            src="img/project-charging.png" />
+                        <div class="absolute top-6 left-6">
+                            <span class="bg-bronze text-white px-4 py-2 font-label text-[10px] font-bold tracking-[0.2em] uppercase">
+                                Laadpalen
+                            </span>
+                        </div>
+                    </div>
+                    <!-- Content -->
+                    <div data-animate="right">
+                        <span class="material-symbols-outlined text-5xl text-bronze mb-6 block">ev_station</span>
+                        <h2 class="font-headline text-3xl md:text-4xl font-bold text-charcoal tracking-tight mb-6 uppercase leading-tight">
+                            Laadpalen voor <span class="text-bronze">Elektrische Wagens</span>
+                        </h2>
+                        <p class="text-charcoal/60 font-body text-base leading-relaxed mb-6 font-light">
+                            Met een laadpaal aan huis of op uw bedrijfsterrein kunt u uw elektrisch voertuig 
+                            eender wanneer met groene stroom opladen. U hoeft nooit meer op zoek te gaan 
+                            naar een openbaar laadpunt.
+                        </p>
+                        <div class="space-y-4 mb-10">
+                            <div class="flex items-start gap-4">
+                                <span class="material-symbols-outlined text-bronze text-xl mt-0.5">check_circle</span>
+                                <p class="text-charcoal/70 font-body text-sm font-light">
+                                    <strong class="font-medium text-charcoal">Nieuwe installaties</strong> — Wij plaatsen 
+                                    staande en hangende laadpalen van topmerken, afgestemd op uw wensen.
+                                </p>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span class="material-symbols-outlined text-bronze text-xl mt-0.5">check_circle</span>
+                                <p class="text-charcoal/70 font-body text-sm font-light">
+                                    <strong class="font-medium text-charcoal">Upgrade laadvermogen</strong> — Uw huidige 
+                                    laadpaal van meer vermogen laten voorzien? Wij regelen het.
+                                </p>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span class="material-symbols-outlined text-bronze text-xl mt-0.5">check_circle</span>
+                                <p class="text-charcoal/70 font-body text-sm font-light">
+                                    <strong class="font-medium text-charcoal">Slimme integratie</strong> — Koppeling met 
+                                    uw zonnepanelen zodat u uw wagen oplaadt met eigen zonne-energie.
+                                </p>
+                            </div>
+                        </div>
+                        <a href="index.html#contact"
+                            class="inline-flex items-center text-[11px] font-bold tracking-[0.2em] text-bronze uppercase hover:text-charcoal transition-colors">
+                            Vraag een offerte aan <span class="material-symbols-outlined ml-3 text-sm">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── Zonnepanelen Section ────────────── -->
+        <section id="zonnepanelen" class="py-20 lg:py-28 px-8 lg:px-12 bg-white">
+            <div class="max-w-[1600px] mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                    <!-- Content (left on desktop) -->
+                    <div class="order-2 lg:order-1" data-animate="left">
+                        <span class="material-symbols-outlined text-5xl text-bronze mb-6 block">solar_power</span>
+                        <h2 class="font-headline text-3xl md:text-4xl font-bold text-charcoal tracking-tight mb-6 uppercase leading-tight">
+                            Zonnepanelen voor <span class="text-bronze">Maximaal Rendement</span>
+                        </h2>
+                        <p class="text-charcoal/60 font-body text-base leading-relaxed mb-6 font-light">
+                            Op hellende en platte daken plaatsen we hoogrenderende fotovoltaïsche zonnepanelen. 
+                            Naargelang uw dakvorm en de ligging van uw pand raden we een passende hoeveelheid 
+                            panelen aan voor optimale opbrengst.
+                        </p>
+                        <div class="space-y-4 mb-10">
+                            <div class="flex items-start gap-4">
+                                <span class="material-symbols-outlined text-bronze text-xl mt-0.5">check_circle</span>
+                                <p class="text-charcoal/70 font-body text-sm font-light">
+                                    <strong class="font-medium text-charcoal">Complete installatie</strong> — Inclusief 
+                                    panelen, omvormers en eventuele thuisbatterij, volledig sleutel-op-de-deur.
+                                </p>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span class="material-symbols-outlined text-bronze text-xl mt-0.5">check_circle</span>
+                                <p class="text-charcoal/70 font-body text-sm font-light">
+                                    <strong class="font-medium text-charcoal">Lagere energiekosten</strong> — Na onze 
+                                    tussenkomst bent u veel minder afhankelijk van het openbare elektriciteitsnetwerk.
+                                </p>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span class="material-symbols-outlined text-bronze text-xl mt-0.5">check_circle</span>
+                                <p class="text-charcoal/70 font-body text-sm font-light">
+                                    <strong class="font-medium text-charcoal">Op maat advies</strong> — Persoonlijk 
+                                    advies op basis van uw verbruiksprofiel en dakoriëntatie.
+                                </p>
+                            </div>
+                        </div>
+                        <a href="index.html#contact"
+                            class="inline-flex items-center text-[11px] font-bold tracking-[0.2em] text-bronze uppercase hover:text-charcoal transition-colors">
+                            Vraag een offerte aan <span class="material-symbols-outlined ml-3 text-sm">arrow_forward</span>
+                        </a>
+                    </div>
+                    <!-- Image (right on desktop) -->
+                    <div class="relative aspect-[4/3] overflow-hidden bg-charcoal order-1 lg:order-2" data-animate="right">
+                        <img alt="Zonnepanelen op een modern dak"
+                            class="w-full h-full object-cover transition-transform duration-[1.5s] hover:scale-105"
+                            src="img/project-solar.png" />
+                        <div class="absolute top-6 right-6">
+                            <span class="bg-bronze text-white px-4 py-2 font-label text-[10px] font-bold tracking-[0.2em] uppercase">
+                                Zonnepanelen
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── Thuisbatterijen Section ─────────── -->
+        <section id="batterijen" class="py-20 lg:py-28 px-8 lg:px-12 bg-soft-gray">
+            <div class="max-w-[1600px] mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                    <!-- Image -->
+                    <div class="relative aspect-[4/3] overflow-hidden bg-charcoal" data-animate="left">
+                        <img alt="Moderne thuisbatterij voor energieopslag"
+                            class="w-full h-full object-cover transition-transform duration-[1.5s] hover:scale-105"
+                            src="img/project-battery.png" />
+                        <div class="absolute top-6 left-6">
+                            <span class="bg-bronze text-white px-4 py-2 font-label text-[10px] font-bold tracking-[0.2em] uppercase">
+                                Thuisbatterijen
+                            </span>
+                        </div>
+                    </div>
+                    <!-- Content -->
+                    <div data-animate="right">
+                        <span class="material-symbols-outlined text-5xl text-bronze mb-6 block">battery_charging_full</span>
+                        <h2 class="font-headline text-3xl md:text-4xl font-bold text-charcoal tracking-tight mb-6 uppercase leading-tight">
+                            Thuisbatterijen voor <span class="text-bronze">Zelfvoorzienend Leven</span>
+                        </h2>
+                        <p class="text-charcoal/60 font-body text-base leading-relaxed mb-6 font-light">
+                            Eigenaars van zonnepanelen doen er goed aan om een thuisbatterij te laten plaatsen. 
+                            Zo'n batterij vangt overtollige zonne-energie op, waardoor u die op een later moment 
+                            kunt inzetten — zelfs als de zon niet schijnt.
+                        </p>
+                        <div class="space-y-4 mb-10">
+                            <div class="flex items-start gap-4">
+                                <span class="material-symbols-outlined text-bronze text-xl mt-0.5">check_circle</span>
+                                <p class="text-charcoal/70 font-body text-sm font-light">
+                                    <strong class="font-medium text-charcoal">Altijd stroom</strong> — Zelfs bij een 
+                                    tijdelijke stroomuitval valt u niet zonder elektriciteit. U bent deels zelfvoorzienend.
+                                </p>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span class="material-symbols-outlined text-bronze text-xl mt-0.5">check_circle</span>
+                                <p class="text-charcoal/70 font-body text-sm font-light">
+                                    <strong class="font-medium text-charcoal">Hoger rendement</strong> — Met een 
+                                    thuisbatterij verhoogt u het rendement van uw zonnepanelen aanzienlijk.
+                                </p>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span class="material-symbols-outlined text-bronze text-xl mt-0.5">check_circle</span>
+                                <p class="text-charcoal/70 font-body text-sm font-light">
+                                    <strong class="font-medium text-charcoal">Slimme opslag</strong> — Overtollige 
+                                    energie wordt automatisch opgeslagen voor gebruik in de avond of nacht.
+                                </p>
+                            </div>
+                        </div>
+                        <a href="index.html#contact"
+                            class="inline-flex items-center text-[11px] font-bold tracking-[0.2em] text-bronze uppercase hover:text-charcoal transition-colors">
+                            Vraag een offerte aan <span class="material-symbols-outlined ml-3 text-sm">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── Stats Bar ───────────────────────── -->
+        <section class="bg-charcoal py-16 lg:py-20 px-8 lg:px-12">
+            <div class="max-w-[1600px] mx-auto">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center" data-animate="up">
+                    <div>
+                        <div class="text-white font-headline text-4xl lg:text-5xl font-bold" data-counter="500" data-suffix="+">0</div>
+                        <div class="text-white/40 font-label text-[10px] uppercase tracking-[0.2em] mt-3">Installaties</div>
+                    </div>
+                    <div>
+                        <div class="text-white font-headline text-4xl lg:text-5xl font-bold" data-counter="98" data-suffix="%">0</div>
+                        <div class="text-white/40 font-label text-[10px] uppercase tracking-[0.2em] mt-3">Tevredenheid</div>
+                    </div>
+                    <div>
+                        <div class="text-white font-headline text-4xl lg:text-5xl font-bold" data-counter="12" data-suffix="+">0</div>
+                        <div class="text-white/40 font-label text-[10px] uppercase tracking-[0.2em] mt-3">Jaar Ervaring</div>
+                    </div>
+                    <div>
+                        <div class="text-white font-headline text-4xl lg:text-5xl font-bold" data-counter="30" data-suffix="%">0</div>
+                        <div class="text-white/40 font-label text-[10px] uppercase tracking-[0.2em] mt-3">Energiebesparing</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── CTA Section ─────────────────────── -->
+        <section class="py-24 lg:py-32 px-8 lg:px-12 bg-white">
+            <div class="max-w-[1600px] mx-auto text-center" data-animate="up">
+                <span class="text-bronze font-label text-[11px] font-bold tracking-[0.4em] uppercase mb-6 block">Klaar om te starten?</span>
+                <h2 class="font-headline text-3xl md:text-5xl font-bold text-charcoal tracking-tight mb-8 uppercase">
+                    Vraag een Vrijblijvende <span class="text-bronze">Offerte</span> Aan
+                </h2>
+                <p class="text-charcoal/50 font-body text-lg leading-relaxed font-light max-w-2xl mx-auto mb-12">
+                    Heeft u interesse in laadpalen, zonnepanelen of thuisbatterijen? Neem vandaag nog contact 
+                    met ons op voor een gratis en vrijblijvend adviesgesprek. Wij helpen u graag verder.
+                </p>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="index.html#contact"
+                        class="bg-charcoal text-white px-12 py-5 font-label text-xs font-bold tracking-[0.2em] uppercase transition-all hover:bg-bronze flex items-center gap-3 btn-ripple">
+                        OFFERTE AANVRAGEN
+                        <span class="material-symbols-outlined text-sm">trending_flat</span>
+                    </a>
+                    <a href="tel:+3201145678"
+                        class="border border-charcoal/20 text-charcoal px-12 py-5 font-label text-xs font-bold tracking-[0.2em] uppercase transition-all hover:bg-charcoal hover:text-white btn-ripple flex items-center gap-3">
+                        <span class="material-symbols-outlined text-sm">call</span>
+                        BEL ONS
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ═══════════════════════════════════════════
+         FOOTER
+         ═══════════════════════════════════════════ -->
+    <footer class="bg-charcoal text-white pt-32 pb-16">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-20 px-8 lg:px-12 w-full max-w-[1600px] mx-auto mb-32">
+            <div class="md:col-span-1">
+                <div class="text-2xl font-extrabold tracking-[0.2em] text-white mb-10 font-headline uppercase">SolArt
+                </div>
+                <p class="text-white/40 font-body text-sm leading-relaxed font-light">
+                    Uw expert in duurzame energie-oplossingen. Wij bouwen aan de elektrische infrastructuur van morgen
+                    met passie en precisie.
+                </p>
+                <div class="flex items-center gap-4 mt-8">
+                    <a href="https://www.instagram.com/solart.be/" target="_blank" rel="noopener noreferrer"
+                        class="text-white/40 hover:text-bronze transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h6 class="text-bronze font-label font-bold mb-8 text-[11px] uppercase tracking-[0.3em]">Diensten</h6>
+                <ul class="space-y-4">
+                    <li><a class="text-white/50 font-body text-sm hover:text-white transition-colors font-light"
+                            href="laadpalen-zonnepanelen.html">Laadpalen, Zonnepanelen & Batterijen</a></li>
+                    <li><a class="text-white/50 font-body text-sm hover:text-white transition-colors font-light"
+                            href="index.html#elektriciteit">Elektriciteitswerken</a></li>
+                </ul>
+            </div>
+            <div>
+                <h6 class="text-bronze font-label font-bold mb-8 text-[11px] uppercase tracking-[0.3em]">Bedrijf</h6>
+                <ul class="space-y-4">
+                    <li><a class="text-white/50 font-body text-sm hover:text-white transition-colors font-light"
+                            href="index.html">Home</a></li>
+                    <li><a class="text-white/50 font-body text-sm hover:text-white transition-colors font-light"
+                            href="index.html#projecten">Projecten</a></li>
+                    <li><a class="text-white/50 font-body text-sm hover:text-white transition-colors font-light"
+                            href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h6 class="text-bronze font-label font-bold mb-8 text-[11px] uppercase tracking-[0.3em]">Juridisch</h6>
+                <ul class="space-y-4">
+                    <li><a class="text-white/50 font-body text-sm hover:text-white transition-colors font-light"
+                            href="#">Privacybeleid</a></li>
+                    <li><a class="text-white/50 font-body text-sm hover:text-white transition-colors font-light"
+                            href="#">Algemene Voorwaarden</a></li>
+                    <li><a class="text-white/50 font-body text-sm hover:text-white transition-colors font-light"
+                            href="#">Cookiebeleid</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-white/5 pt-12 px-8 lg:px-12 text-center">
+            <p class="text-white/20 font-label text-[10px] font-bold tracking-[0.2em] uppercase">
+                © 2026 SolArt. Alle rechten voorbehouden.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Main JS -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
