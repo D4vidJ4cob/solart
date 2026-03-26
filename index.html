@@ -151,8 +151,11 @@
         <!-- ─── Hero Section ─────────────────────── -->
         <section id="home" class="relative min-h-screen w-full flex items-center overflow-hidden bg-charcoal">
             <div class="absolute inset-0 z-0 opacity-70">
-                <img alt="Zonnepanelen op modern huis" class="w-full h-full object-cover"
-                    src="img/hero-solar.png" />
+                <picture>
+                    <source srcset="img/hero-solar.webp" type="image/webp" />
+                    <img alt="Zonnepanelen op modern huis" class="w-full h-full object-cover"
+                        src="img/hero-solar.png" width="640" height="640" fetchpriority="high" />
+                </picture>
             </div>
             <div class="relative z-10 max-w-[1600px] mx-auto px-8 lg:px-12 w-full flex items-center">
                 <div class="max-w-4xl" data-animate="left">
@@ -284,7 +287,8 @@
                         data-animate-delay="100">
                         <img alt="High-tech Control System"
                             class="w-full h-full object-cover transition-transform duration-[1.5s] hover:scale-105"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4Vh8zE-F91JF0lPoS8u6m4v4driO-1qf4B4PORSiaYbTNGULX-0CUGZUXWlUD2ADxnqxfqC66Rs9Hd1-EohCMfbi32MPtNDhYyCqJXjCXedioI2oTpv4hqfnKY4y0GyB_79jSs9Qn6ip7uGzsfiYNqJYvmVlhdDjiBOaz84Fu_RSLVoZ-gDqKwLNP9MDmzjbqCo03MvIFD8asP6jV6Od1u4fme0vYEQbIJ6MFGJgb2osEAcnhkg7mcs0R2Yhid6Yef36izn3v01ni" />
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4Vh8zE-F91JF0lPoS8u6m4v4driO-1qf4B4PORSiaYbTNGULX-0CUGZUXWlUD2ADxnqxfqC66Rs9Hd1-EohCMfbi32MPtNDhYyCqJXjCXedioI2oTpv4hqfnKY4y0GyB_79jSs9Qn6ip7uGzsfiYNqJYvmVlhdDjiBOaz84Fu_RSLVoZ-gDqKwLNP9MDmzjbqCo03MvIFD8asP6jV6Od1u4fme0vYEQbIJ6MFGJgb2osEAcnhkg7mcs0R2Yhid6Yef36izn3v01ni"
+                            loading="lazy" width="640" height="360" />
                         <div class="absolute bottom-0 left-0 p-10 lg:p-12 w-full gallery-overlay">
                             <h4 class="text-white font-headline text-xl font-bold mb-2 uppercase tracking-tight">
                                 Industriële Precisie</h4>
@@ -296,7 +300,8 @@
                         data-animate-delay="200">
                         <img alt="EV Infrastructure"
                             class="w-full h-full object-cover transition-transform duration-[1.5s] hover:scale-105"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4myzRg47H-TMtWjSG_kMhI-UzVNo50TADiVeM-UTo12w8yuTNKhxSD-xNVy3Rv9cB_eunRQ8MtG0tJJBPffZL6NOGsp8WUnYSFc1nUPVoqN9kcrG0g_-GiosHmtT-p-pRiWmJxlFtIsqbAhW2iGOFzBfc5dbYIZs3vLL8VaoapCqxL5Lh1ToLi_jwhdSd4GWViRhQrs927PzZBd9xmWn-FpDDUgCpVWV7-4eaFw7KaHRgSDBDtePVgMgaJWEyo8iJbwzrihBs9KNu" />
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4myzRg47H-TMtWjSG_kMhI-UzVNo50TADiVeM-UTo12w8yuTNKhxSD-xNVy3Rv9cB_eunRQ8MtG0tJJBPffZL6NOGsp8WUnYSFc1nUPVoqN9kcrG0g_-GiosHmtT-p-pRiWmJxlFtIsqbAhW2iGOFzBfc5dbYIZs3vLL8VaoapCqxL5Lh1ToLi_jwhdSd4GWViRhQrs927PzZBd9xmWn-FpDDUgCpVWV7-4eaFw7KaHRgSDBDtePVgMgaJWEyo8iJbwzrihBs9KNu"
+                            loading="lazy" width="640" height="360" />
                         <div class="absolute bottom-0 left-0 p-10 lg:p-12 w-full gallery-overlay">
                             <h4 class="text-white font-headline text-xl font-bold mb-2 uppercase tracking-tight">Slimme
                                 Integratie</h4>
@@ -322,9 +327,12 @@
                     <!-- Project Card 1 — Zonnepanelen -->
                     <div class="group relative aspect-[3/4] overflow-hidden bg-charcoal" data-animate="up"
                         data-animate-delay="100">
-                        <img alt="Zonnepanelen installatie op industrieel dak"
-                            class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110 opacity-80 group-hover:opacity-100"
-                            src="img/project-solar.png" />
+                        <picture>
+                            <source srcset="img/project-solar.webp" type="image/webp" />
+                            <img alt="Zonnepanelen installatie op industrieel dak"
+                                class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110 opacity-80 group-hover:opacity-100"
+                                src="img/project-solar.png" width="640" height="640" loading="lazy" />
+                        </picture>
                         <div
                             class="absolute inset-0 p-10 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-500 bg-gradient-to-t from-charcoal/90 to-transparent">
                             <span
@@ -338,9 +346,12 @@
                     <!-- Project Card 2 — Laadpalen -->
                     <div class="group relative aspect-[3/4] overflow-hidden bg-charcoal" data-animate="up"
                         data-animate-delay="200">
-                        <img alt="EV laadpalen op kantoorpark"
-                            class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110 opacity-80 group-hover:opacity-100"
-                            src="img/project-charging.png" />
+                        <picture>
+                            <source srcset="img/project-charging.webp" type="image/webp" />
+                            <img alt="EV laadpalen op kantoorpark"
+                                class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110 opacity-80 group-hover:opacity-100"
+                                src="img/project-charging.png" width="640" height="640" loading="lazy" />
+                        </picture>
                         <div
                             class="absolute inset-0 p-10 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-500 bg-gradient-to-t from-charcoal/90 to-transparent">
                             <span
@@ -354,9 +365,12 @@
                     <!-- Project Card 3 — Batterijen -->
                     <div class="group relative aspect-[3/4] overflow-hidden bg-charcoal" data-animate="up"
                         data-animate-delay="300">
-                        <img alt="Thuisbatterij installatie"
-                            class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110 opacity-80 group-hover:opacity-100"
-                            src="img/project-battery.png" />
+                        <picture>
+                            <source srcset="img/project-battery.webp" type="image/webp" />
+                            <img alt="Thuisbatterij installatie"
+                                class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110 opacity-80 group-hover:opacity-100"
+                                src="img/project-battery.png" width="640" height="640" loading="lazy" />
+                        </picture>
                         <div
                             class="absolute inset-0 p-10 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-500 bg-gradient-to-t from-charcoal/90 to-transparent">
                             <span
@@ -370,9 +384,12 @@
                     <!-- Project Card 4 — Elektriciteitswerken -->
                     <div class="group relative aspect-[3/4] overflow-hidden bg-charcoal" data-animate="up"
                         data-animate-delay="400">
-                        <img alt="Elektrische installatie in loft"
-                            class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110 opacity-80 group-hover:opacity-100"
-                            src="img/project-electrical.png" />
+                        <picture>
+                            <source srcset="img/project-electrical.webp" type="image/webp" />
+                            <img alt="Elektrische installatie in loft"
+                                class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110 opacity-80 group-hover:opacity-100"
+                                src="img/project-electrical.png" width="640" height="640" loading="lazy" />
+                        </picture>
                         <div
                             class="absolute inset-0 p-10 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-500 bg-gradient-to-t from-charcoal/90 to-transparent">
                             <span
