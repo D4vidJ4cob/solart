@@ -1,6 +1,9 @@
 # Dependencies
 node_modules/
 
+# Claude Code (lokale sessie-data)
+.claude/
+
 # Vercel
 .vercel/
 
